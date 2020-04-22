@@ -6,8 +6,8 @@
 	<persistence-unit name="auctions-pu-test" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<!-- add classes -->
-		<class>be.pxl.auctions.model.Auction</class>
-		<class>be.pxl.auctions.model.Bid</class>
+<!--		<class>be.pxl.auctions.model.Auction</class>-->
+<!--		<class>be.pxl.auctions.model.Bid</class>-->
 		<class>be.pxl.auctions.model.User</class>
 		<properties>
 			<!-- Configuring JDBC properties -->
