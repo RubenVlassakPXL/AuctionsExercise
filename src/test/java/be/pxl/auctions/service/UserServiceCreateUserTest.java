@@ -45,7 +45,7 @@ public class UserServiceCreateUserTest {
 
         userService.createUser(user);
 
-        verify(userDao).saveUser(user); // controleer of de methode is aangeroepen
+        verify(userDao, times(1)).saveUser(user); // controleer of de methode is aangeroepen
     }
 
     @Test
@@ -55,5 +55,6 @@ public class UserServiceCreateUserTest {
         assertThrows(RequiredFieldException.class, () -> userService.createUser(user));
 
         verifyNoInteractions(userDao); // er is geen communicatie met de database gebeurd
+//        verify(userDao, times(0)).saveUser(user);
     }
 }

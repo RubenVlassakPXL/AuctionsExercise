@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
 public class UserServiceGetUserByIdTest {
-	private static final long USER_ID = 5l;
+	private static final long USER_ID = 5L;
 
 	@Mock
 	private UserDao userDao;
@@ -36,12 +36,14 @@ public class UserServiceGetUserByIdTest {
 	@Test
 	public void returnsNullWhenNoUserWithGivenIdFound() {
 		when(userDao.findUserById(USER_ID)).thenReturn(null);
+
 		assertNull(userService.getUserById(USER_ID));
 	}
 
 	@Test
 	public void returnsUserWhenUserFoundWithGivenId() {
 		when(userDao.findUserById(USER_ID)).thenReturn(user);
+
 		assertEquals(user, userService.getUserById(USER_ID));
 	}
 }
